@@ -1,0 +1,8 @@
+import ctypes
+
+
+SDL_REVISION = SDL_VENDOR_INFO
+
+SDL_REVISION = ""
+
+SDL_REVISION_NUMBER = 0
