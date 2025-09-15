@@ -29,24 +29,11 @@ class SDL_AssertData(ctypes.Structure):
 		('filename', ctypes.c_char_p),
 		('linenum', ctypes.c_int),
 		('function', ctypes.c_char_p),
-		('next', ctypes.POINTER(SDL_AssertData)),
+		('next', ctypes.c_void_p),
 	]
 
 
 SDL_assert_data = SDL_AssertData
-
-
-LoadDLL.DLL.__debugbreak.restype = None
-LoadDLL.DLL.__debugbreak.argtypes = []
-
-def __debugbreak():
-	"""
-	Args:
-		: None.
-	Returns:
-		res: None.
-	"""
-	LoadDLL.DLL.__debugbreak()
 
 
 LoadDLL.DLL.SDL_ReportAssertion.restype = ctypes.c_int

@@ -25,7 +25,7 @@ class SDL_WindowShapeParams(ctypes.Union):
 
 class SDL_WindowShapeMode(ctypes.Structure):
 	_fields_ = [
-		('mode', WindowShapeMode),
+		('mode', ctypes.c_int),
 		('parameters', SDL_WindowShapeParams),
 	]
 

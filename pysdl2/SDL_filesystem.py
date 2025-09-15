@@ -1,8 +1,9 @@
 import ctypes
+from .LoadDLL import LoadDLL
 
 
-SOME.SDL_GetBasePath.restype = ctypes.c_char_p
-SOME.SDL_GetBasePath.argtypes = []
+LoadDLL.DLL.SDL_GetBasePath.restype = ctypes.c_char_p
+LoadDLL.DLL.SDL_GetBasePath.argtypes = []
 
 def SDL_GetBasePath():
 	"""
@@ -11,11 +12,11 @@ def SDL_GetBasePath():
 	Returns:
 		res: ctypes.c_char_p.
 	"""
-	return SOME.SDL_GetBasePath()
+	return LoadDLL.DLL.SDL_GetBasePath()
 
 
-SOME.SDL_GetPrefPath.restype = ctypes.c_char_p
-SOME.SDL_GetPrefPath.argtypes = [ctypes.c_char_p, ctypes.c_char_p]
+LoadDLL.DLL.SDL_GetPrefPath.restype = ctypes.c_char_p
+LoadDLL.DLL.SDL_GetPrefPath.argtypes = [ctypes.c_char_p, ctypes.c_char_p]
 
 def SDL_GetPrefPath(org, app):
 	"""
@@ -25,4 +26,4 @@ def SDL_GetPrefPath(org, app):
 	Returns:
 		res: ctypes.c_char_p.
 	"""
-	return SOME.SDL_GetPrefPath(org, app)
+	return LoadDLL.DLL.SDL_GetPrefPath(org, app)

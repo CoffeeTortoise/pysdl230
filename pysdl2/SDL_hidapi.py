@@ -20,7 +20,7 @@ class SDL_hid_device_info(ctypes.Structure):
 		('interface_class', ctypes.c_int),
 		('interface_subclass', ctypes.c_int),
 		('interface_protocol', ctypes.c_int),
-		('next', ctypes.POINTER(SDL_hid_device_info)),
+		('next', ctypes.c_void_p),
 	]
 
 LoadDLL.DLL.SDL_hid_init.restype = ctypes.c_int

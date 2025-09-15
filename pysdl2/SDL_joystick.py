@@ -49,7 +49,7 @@ class SDL_VirtualJoystickDesc(ctypes.Structure): pass
 
 class SDL_JoystickGUID(ctypes.Structure):
     _fields_ = [
-        ('data': ctypes.c_uint8 * 16),
+        ('data', ctypes.c_uint8 * 16),
     ]
 
 

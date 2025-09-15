@@ -17,7 +17,36 @@ Before installation, ensure you have the following dependencies:
 
 ### Installing SDL2
 
-On Ubuntu, you can install SDL2 using the following command:
+On Ubuntu and Mint, you can install SDL2 using the following command:
 
 ```bash
-sudo apt-get install libsdl2-dev
+sudo apt update
+sudo apt install libsdl2-dev
+sudo apt install libsdl2-ttf-dev
+sudo apt install libsdl2-mixer-dev
+sudo apt install libsdl2-image-dev
+```
+
+### Installing pysdl230
+
+```
+pip install pysdl230-0.1-py2-none-any.whl
+```
+Or:
+```
+pip install pysdl230-0.1-py3-none-any.whl
+```
+Or just:
+```
+pip install pysdl230
+```
+
+## Documentation
+
+This wrapper is very low-level. Therefore, what applies to SDL2 will be true for the most part.
+SDL2 documentation: [SDL2/FrontPage](https://wiki.libsdl.org/SDL2/FrontPage)
+Also recommend: [SDL2.0 tutorial](https://kleinbauer.fr/alexis/ebook/SDL_Game_Development_en.pdf)
+
+## Feedback
+
+Found some issues? Please, contact me: e.8ychkov@yandex.ru

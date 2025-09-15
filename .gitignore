@@ -1,2 +1,7 @@
+finder.py
+sorter.py
+setup.py
+dist
+*.whl
 *.pyc
 *.pyo

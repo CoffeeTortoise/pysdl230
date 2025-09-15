@@ -24,6 +24,7 @@ from pysdl2.SDL_image import IMG_InitFlags, IMG_Init, IMG_Quit, IMG_LoadTexture,
 from pysdl2.SDL_render import SDL_DestroyRenderer, SDL_CreateRenderer, SDL_RendererFlags, SDL_RenderCopy
 from pysdl2.SDL_render import SDL_SetRenderDrawColor, SDL_RenderClear, SDL_RenderPresent, SDL_RenderFillRect
 from pysdl2.SDL_render import SDL_DestroyTexture, SDL_RenderCopyEx, SDL_RendererFlip, SDL_QueryTexture
+# import pysdl2.sdl2
 
 import ctypes
 import sys
