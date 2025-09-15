@@ -164,10 +164,10 @@ def main():
 if __name__ == '__main__':
 	if sys.platform.startswith('win'):
 		ctypes.windll.user32.SetProcessDPIAware()
-		sys.stdout.write('start!\n')
-		SDL_Init(SDL_INIT_EVERYTHING)
-		IMG_Init(IMG_InitFlags.IMG_INIT_PNG)
-		main()
-		IMG_Quit()
-		SDL_Quit()
-		sys.stdout.write('end!\n')
+	sys.stdout.write('start!\n')
+	SDL_Init(SDL_INIT_EVERYTHING)
+	IMG_Init(IMG_InitFlags.IMG_INIT_PNG)
+	main()
+	IMG_Quit()
+	SDL_Quit()
+	sys.stdout.write('end!\n')
