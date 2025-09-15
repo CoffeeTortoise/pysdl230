@@ -332,7 +332,7 @@ class SDL_ControllerSensorEvent(ctypes.Structure):
 		('timestamp', ctypes.c_uint),
 		('which', ctypes.c_int32),
 		('sensor', ctypes.c_int32),
-		('data[3]', ctypes.c_float),
+		('data', ctypes.c_float * 3),
 		('timestamp_us', ctypes.c_ulonglong),
 	]
 

@@ -40,7 +40,7 @@ def main():
     sys.stdout.write('Resolution: {}x{}\n'.format(mode.w, mode.h))
     width, height = int(mode.w * .5), int(mode.h * .666)
     wnd = SDL_CreateWindow(
-        'SDL_test',
+        'SDL_test',                # Note: python27 byte str
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         width, height,

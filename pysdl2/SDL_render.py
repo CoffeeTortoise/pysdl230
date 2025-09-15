@@ -3,7 +3,7 @@ from .LoadDLL import LoadDLL
 from .SDL_video import SDL_Window
 from .SDL_pixels import SDL_Color
 from .SDL_surface import SDL_Surface
-from .SDL_rect import SDL_FRect, SDL_Rect, SDL_FPoint
+from .SDL_rect import SDL_FRect, SDL_Rect, SDL_FPoint, SDL_Point
 
 
 class SDL_RendererFlags:
@@ -120,13 +120,13 @@ LoadDLL.DLL.SDL_RenderPresent.restype = None
 LoadDLL.DLL.SDL_RenderPresent.argtypes = [ctypes.POINTER(SDL_Renderer)]
 
 def SDL_RenderPresent(renderer):
-    """
+	"""
 	Args:
 		renderer: ctypes.POINTER(SDL_Renderer).
 	Returns:
 		res: None.
 	"""
-    LoadDLL.DLL.SDL_RenderPresent(renderer)
+	LoadDLL.DLL.SDL_RenderPresent(renderer)
 
 
 LoadDLL.DLL.SDL_RenderGetWindow.restype = ctypes.POINTER(SDL_Window)
@@ -177,14 +177,14 @@ LoadDLL.DLL.SDL_CreateTextureFromSurface.restype = ctypes.POINTER(SDL_Texture)
 LoadDLL.DLL.SDL_CreateTextureFromSurface.argtypes = [ctypes.POINTER(SDL_Renderer), ctypes.POINTER(SDL_Surface)]
 
 def SDL_CreateTextureFromSurface(renderer, surface):
-    """
+	"""
 	Args:
 		renderer: ctypes.POINTER(SDL_Renderer).
 		surface: ctypes.POINTER(SDL_Surface).
 	Returns:
 		res: ctypes.POINTER(SDL_Texture).
 	"""
-    return LoadDLL.DLL.SDL_CreateTextureFromSurface(renderer, surface)
+	return LoadDLL.DLL.SDL_CreateTextureFromSurface(renderer, surface)
 
 
 LoadDLL.DLL.SDL_QueryTexture.restype = ctypes.c_int
@@ -202,6 +202,25 @@ def SDL_QueryTexture(texture, format, access, w, h):
 		res: ctypes.c_int.
 	"""
 	return LoadDLL.DLL.SDL_QueryTexture(texture, format, access, w, h)
+
+
+LoadDLL.DLL.SDL_RenderCopyEx.restype = ctypes.c_int
+LoadDLL.DLL.SDL_RenderCopyEx.argtypes = [ctypes.POINTER(SDL_Renderer), ctypes.POINTER(SDL_Texture), ctypes.POINTER(SDL_Rect), ctypes.POINTER(SDL_Rect), ctypes.c_double, ctypes.POINTER(SDL_Point), ctypes.c_int]
+
+def SDL_RenderCopyEx(renderer, texture, srcrect, dstrect, angle, center, flip):
+	"""
+	Args:
+		renderer: ctypes.POINTER(SDL_Renderer).
+		texture: ctypes.POINTER(SDL_Texture).
+		srcrect: ctypes.POINTER(SDL_Rect).
+		dstrect: ctypes.POINTER(SDL_Rect).
+		angle: ctypes.c_double.
+		center: ctypes.POINTER(SDL_Point).
+		flip: ctypes.c_int.
+	Returns:
+		res: ctypes.c_int.
+	"""
+	return LoadDLL.DLL.SDL_RenderCopyEx(renderer, texture, srcrect, dstrect, angle, center, flip)
 
 
 LoadDLL.DLL.SDL_GetTextureColorMod.restype = ctypes.c_int
